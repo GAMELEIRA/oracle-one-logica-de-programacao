@@ -1,0 +1,51 @@
+<!--
+    AUTOR: GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 02/09/2020
+    HORA: 12:36
+    FINALIDADE DO PROGRAMA: TRABALHAR COM JOGO ADVINHACAO
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    const pularLinha = () => {
+
+        document.write("<br>");
+
+    }
+
+    const escreverTexto = (mensagem) => {
+
+        document.write(mensagem);
+
+        pularLinha();
+
+
+    }
+
+    const gerarTabuada = (multiplicador) => {
+
+        for(let i = 0; i <= 10; i++){
+
+            escreverTexto(`${i} x ${multiplicador} = ${i * multiplicador}`);
+
+        }
+    
+    }
+
+    gerarTabuada(10);
+
+</script>
