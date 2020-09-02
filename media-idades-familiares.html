@@ -1,0 +1,69 @@
+<!--
+    AUTOR: GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 02/09/2020
+    HORA: 13:50
+    FINALIDADE DO PROGRAMA: TRABALHAR COM MEDIA DE IDADES
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    const pularLinha = () => {
+
+        document.write("<br>");
+
+    }
+
+    const escreverTexto = (mensagem) => {
+
+        document.write(mensagem);
+
+        pularLinha();
+
+
+    }
+
+    const calcularMediaIdades = (quantidadePessoas, idades) =>  idades / quantidadePessoas;
+
+    const exibirFormularioFamiliares = () => {
+
+        let idades = 0;
+
+        let quantidadePessoas = 0;
+        
+        let contador = 1;
+
+        let media = 0;
+
+        quantidadePessoas = Number(prompt("Qual a quantidade de familiares?"));
+
+        for (let i = 0; i < quantidadePessoas; i++) {
+
+            idades += Number(prompt("Informe a idade do familiar: "));
+
+            contador++;
+
+        }
+
+        media = calcularMediaIdades(quantidadePessoas, idades).toFixed(2);
+
+        escreverTexto("A média das idades é ".concat(media));
+
+    }
+
+    exibirFormularioFamiliares();
+
+</script>
