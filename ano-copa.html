@@ -1,0 +1,53 @@
+<!--
+    AUTOR: GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 02/09/2020
+    HORA: 12:36
+    FINALIDADE DO PROGRAMA: TRABALHAR COM JOGO ADVINHACAO
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Copa</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    const pularLinha = () => {
+
+        document.write("<br>");
+
+    }
+
+    const escreverTexto = (mensagem) => {
+
+        document.write(mensagem);
+
+        pularLinha();
+
+
+    }
+
+    const gerarAnosCopa = (anoAtual) => {
+
+        let anoInicial = 1930;
+
+        for(let i = anoInicial; i <= anoAtual; i += 4){
+
+            escreverTexto("Teve copa em ".concat(i));
+
+        }
+    
+    }
+
+    gerarAnosCopa(2020);
+
+</script>
