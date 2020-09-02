@@ -1,0 +1,68 @@
+<!--
+    AUTOR: GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 02/09/2020
+    HORA: 11:06
+    FINALIDADE DO PROGRAMA: TRABALHAR COM O CALCULO DO IMC
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    const pularLinha = () => {
+
+        document.write("<br>");
+
+    }
+
+    const escreverTexto = (mensagem) => {
+
+        document.write(mensagem);
+
+        pularLinha();
+
+
+    }
+
+    const solicitarInformacoesParaUsuario = (mensagem) => prompt(mensagem);
+    
+    const calcularIMC = (altura, peso) => (peso / Math.pow(altura, 2)).toFixed(2);
+
+    const exibirFormularioIMC = () => {
+
+        let nome;
+
+        let peso; 
+
+        let altura; 
+
+        let imc;
+
+        nome = solicitarInformacoesParaUsuario("Qual o seu nome?");
+
+        peso = solicitarInformacoesParaUsuario("Qual o seu peso?");
+
+        altura = solicitarInformacoesParaUsuario("Qual a sua altura?");
+
+        imc = calcularIMC(altura, peso);
+
+        escreverTexto(nome.concat(" seu IMC é de: ".concat(imc))); 
+
+    }
+
+    exibirFormularioIMC();
+
+
+</script>
