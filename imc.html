@@ -37,16 +37,34 @@
     }
 
     const solicitarInformacoesParaUsuario = (mensagem) => prompt(mensagem);
-    
+
     const calcularIMC = (altura, peso) => (peso / Math.pow(altura, 2)).toFixed(2);
+
+    const definirIdealImc = (peso) => {
+
+        if (peso < 18.5) {
+
+            escreverTexto("Você está abaixo do recomendado!");
+
+        } else if (peso > 35) {
+
+            escreverTexto("Você está acima do recomendado!");
+
+        } else {
+
+            escreverTexto("Você está ideal do recomendado!");
+
+        }
+
+    }
 
     const exibirFormularioIMC = () => {
 
         let nome;
 
-        let peso; 
+        let peso;
 
-        let altura; 
+        let altura;
 
         let imc;
 
@@ -58,11 +76,12 @@
 
         imc = calcularIMC(altura, peso);
 
-        escreverTexto(nome.concat(" seu IMC é de: ".concat(imc))); 
+        escreverTexto(nome.concat(" seu IMC é de: ".concat(imc)));
+
+        definirIdealImc(peso);
 
     }
 
     exibirFormularioIMC();
-
 
 </script>
