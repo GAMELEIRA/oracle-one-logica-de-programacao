@@ -1,0 +1,74 @@
+<!--
+    AUTOR: GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 01/09/2020
+    HORA: 08:13
+    FINALIDADE DO PROGRAMA: TRABALHAR COM O DOM
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa</title>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    const pularLinha = () => {
+
+        document.write("<br>");
+
+    }
+
+    const escreverTexto = (mensagem) => {
+
+        document.write(mensagem);
+
+        pularLinha();
+
+
+    }
+
+    const calcularMedia = () => {
+
+        let resultado = 0;
+
+        arguments.array.forEach(idade => {
+
+
+            resultado += resultado / arguments.length;
+            
+        });
+
+        return Math.round(resultado);
+
+    }
+
+    const calcularNascimento = (anoAtual, idade) => anoAtual - idade;
+
+    let anoAtual = 2020;
+
+    let idadeGabriel = 21;
+
+    let idadeX = 17;
+
+    escreverTexto("A idade do Gabriel é " + idadeGabriel + " anos."); //ESCREVE NO DOCUMENTO
+
+    escreverTexto("Gabriel nasceu em " + calcularNascimento(anoAtual , idadeGabriel));
+
+    escreverTexto("A idade do X é " + idadeX + " anos."); //ESCREVE NO DOCUMENTO
+
+    escreverTexto("X nasceu em " + calcularNascimento(anoAtual , idadeX));
+
+    document.write("A média das idades é " + (idadeGabriel, idadeX) );
+
+</script>
