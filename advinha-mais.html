@@ -1,0 +1,74 @@
+<!--
+    AUTOR: GABRIEL GAMELEIRA DOS SANTOS
+    DATA: 02/09/2020
+    HORA: 12:36
+    FINALIDADE DO PROGRAMA: TRABALHAR COM JOGO ADVINHA
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVINHA</title>
+</head>
+
+<body>
+
+    <input>
+
+    <button>Compare!</button>
+
+    <br>
+
+</body>
+
+</html>
+<script>
+
+    let botao = document.querySelector("button");
+
+    const definirAcerto = (numeroInformado, numeroGerado) => (numeroGerado == numeroInformado) ? "Acertou!" : "Errou!";
+
+    const buscarInput = () => {
+
+        let input;
+
+        let numeroGerado;
+
+        let acerto;
+
+        numeroGerado = gerarNumero();
+
+        input = document.querySelector("input").value;
+
+        acerto = definirAcerto(input, numeroGerado);
+
+        escreverTexto(acerto.concat(" número pensado foi ".concat(numeroGerado)));
+
+        input.value = "";
+
+        input.focus();
+
+    }
+
+    const pularLinha = () => {
+
+        document.write("<br>");
+
+    }
+
+    const escreverTexto = (mensagem) => {
+
+        document.write(mensagem);
+
+        pularLinha();
+
+    }
+
+    const gerarNumero = () => Math.round((Math.random() * 10));
+
+    botao.onclick = buscarInput;
+
+</script>
