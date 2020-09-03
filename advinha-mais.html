@@ -29,27 +29,41 @@
 
     let botao = document.querySelector("button");
 
+    let chaves = [];
+
     const definirAcerto = (numeroInformado, numeroGerado) => (numeroGerado == numeroInformado) ? "Acertou!" : "Errou!";
 
     const buscarInput = () => {
 
         let input;
 
-        let numeroGerado;
-
         let acerto;
 
-        numeroGerado = gerarNumero();
+        gerarNumeros(3);
 
         input = document.querySelector("input").value;
 
-        acerto = definirAcerto(input, numeroGerado);
+       teste: {
 
-        escreverTexto(acerto.concat(" número pensado foi ".concat(numeroGerado)));
+            for (let i = 0; i < chaves.length; i++) {
+
+                acerto = definirAcerto(input, chaves[i]);
+
+                if (acerto == "Acertou!") {
+
+                    escreverTexto(acerto.concat("Os números pensados foram ".concat(chaves)));
+
+                    break teste;
+
+                }
+
+            }
+
+            escreverTexto(acerto.concat(" Os números pensados foram".concat(chaves)));
+
+        }
 
         input.value = "";
-
-        input.focus();
 
     }
 
@@ -67,7 +81,22 @@
 
     }
 
-    const gerarNumero = () => Math.round((Math.random() * 10));
+    const gerarNumeros = (quantidadeChaves) => {
+
+        let numeroAleatorio = 0;
+
+        for (let i = 0; i < quantidadeChaves; i++) {
+
+            do {
+
+                numeroAleatorio = Math.round((Math.random() * 10));
+
+            } while (!(chaves.every((valor) => valor != numeroAleatorio)));
+
+            chaves.push(numeroAleatorio);
+
+        }
+    }
 
     botao.onclick = buscarInput;
 
